@@ -1,6 +1,11 @@
+# Runtime
 pydantic
 openpyxl
 fastapi
 uvicorn
 pandas
 numpy
+
+# Tests / development
+pytest
+httpx
