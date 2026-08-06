@@ -11,20 +11,22 @@ A aplicação permite:
 - comparar os itens do fornecedor com os dados atuais;
 - calcular preços sugeridos com base em regras de margem e limites de variação;
 - retornar um resumo com itens em quarentena e alterações de preço;
-- registrar logs detalhados em arquivos JSON rotacionados.
+- registrar logs em arquivos JSON rotacionados e, opcionalmente, no console.
 
-## Estrutura do projeto
+## Estrutura atual do projeto
 
-- `main.py`: definição da API FastAPI, middlewares, rotas e autenticação simples.
-- `services.py`: leitura de planilhas e lógica de processamento de dados.
-- `schemas.py`: modelos Pydantic para entrada e saída da API.
-- `logging_config.py`: configuração de logging com rotação de arquivos e logs por nível.
-- `tests/`: testes automatizados para validação do comportamento da API e do sistema de logs.
+- [main.py](main.py): ponto de entrada que expõe a aplicação FastAPI.
+- [app/api/routes.py](app/api/routes.py): rotas, middleware, autenticação e tratamento de erros.
+- [app/services/processing.py](app/services/processing.py): leitura de arquivos e processamento dos dados.
+- [app/schemas/models.py](app/schemas/models.py): modelos Pydantic de entrada e saída.
+- [app/core/config.py](app/core/config.py): configuração centralizada via variáveis de ambiente.
+- [logging_config.py](logging_config.py): configuração de logging com rotação de arquivos e logs por nível.
+- [tests](tests): suíte de testes automatizados para a API e o sistema de logging.
 
 ## Requisitos
 
 - Python 3.10+
-- Dependências listadas em `requirements.txt`
+- Dependências listadas em [requirements.txt](requirements.txt)
 
 ## Instalação
 
@@ -54,6 +56,27 @@ A API ficará disponível em:
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
 
+## Configuração por variáveis de ambiente
+
+A aplicação lê as seguintes variáveis de ambiente em [app/core/config.py](app/core/config.py):
+
+- `APP_SECRET_TOKEN`: token usado para autenticação das rotas protegidas. Padrão: `teste`
+- `APP_LOG_LEVEL`: nível mínimo de log. Padrão: `INFO`
+- `APP_LOG_CONSOLE`: habilita logs no console quando definido como `true`
+- `APP_LOG_MAX_BYTES`: tamanho máximo do arquivo principal antes da rotação. Padrão: `5242880`
+- `APP_LOG_BACKUP_COUNT`: quantidade de arquivos de backup. Padrão: `3`
+- `APP_LOG_ROTATION_WHEN`: frequência da rotação. Padrão: `midnight`
+- `APP_LOG_ROTATION_INTERVAL`: intervalo de rotação em minutos, quando o modo não for `midnight`
+- `APP_LOG_KEEP_DAYS`: quantidade de dias para manter logs antigos. Padrão: `7`
+
+Exemplo no PowerShell:
+
+```powershell
+$env:APP_SECRET_TOKEN="meu-token"
+$env:APP_LOG_LEVEL="DEBUG"
+$env:APP_LOG_CONSOLE="true"
+```
+
 ## Autenticação
 
 As rotas protegidas exigem o header:
@@ -62,7 +85,7 @@ As rotas protegidas exigem o header:
 X-App-Token: teste
 ```
 
-O valor atual está definido no código como `teste` para fins de desenvolvimento.
+Se você quiser alterar o valor padrão, defina a variável de ambiente `APP_SECRET_TOKEN` antes de iniciar a aplicação.
 
 ## Endpoints
 
@@ -135,29 +158,7 @@ curl -X POST "http://localhost:8000/upload-planilha" `
 
 ## Logs
 
-O projeto usa um sistema de logging configurado em `logging_config.py`.
-
-### Variáveis de ambiente
-
-Você pode ajustar o comportamento dos logs sem alterar o código:
-
-- `APP_LOG_MAX_BYTES`: tamanho máximo do arquivo principal em bytes antes da rotação. Padrão: `5242880` (5 MB)
-- `APP_LOG_BACKUP_COUNT`: quantidade de arquivos de backup a manter. Padrão: `3`
-- `APP_LOG_ROTATION_WHEN`: frequência da rotação. Padrão: `midnight`
-- `APP_LOG_ROTATION_INTERVAL`: intervalo da rotação, em minutos, quando o modo não for `midnight`. Padrão: `1`
-- `APP_LOG_KEEP_DAYS`: quantidade de dias para manter arquivos antigos de log. Padrão: `7`
-- `APP_LOG_LEVEL`: nível mínimo de log. Padrão: `INFO`
-- `APP_LOG_CONSOLE`: habilita logs no console quando definido como `true`
-
-### Exemplo no PowerShell
-
-```powershell
-$env:APP_LOG_MAX_BYTES="1048576"
-$env:APP_LOG_BACKUP_COUNT="5"
-$env:APP_LOG_KEEP_DAYS="14"
-$env:APP_LOG_LEVEL="DEBUG"
-$env:APP_LOG_CONSOLE="true"
-```
+O projeto usa um sistema de logging configurado em [logging_config.py](logging_config.py).
 
 ### Arquivos gerados
 
