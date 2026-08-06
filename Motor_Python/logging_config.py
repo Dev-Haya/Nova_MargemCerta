@@ -8,16 +8,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import TextIO
 
-# Use APP_LOG_CONSOLE=true para habilitar logs no terminal em execução local.
-# A configuração padrão grava apenas em arquivos rotacionados.
+from app.core.config import settings
 
 
 class JsonFormatter(logging.Formatter):
     """Formata registros de log como JSON."""
-    
+
     def format(self, record: logging.LogRecord) -> str:
-        """Retorna o registro de log como uma string JSON."""
-        
         payload = {
             "timestamp": datetime.fromtimestamp(record.created, tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
             "level": record.levelname,
@@ -36,10 +33,8 @@ class JsonFormatter(logging.Formatter):
 
 
 class MultiRotatingFileHandler(logging.Handler):
-    """
-    Um manipulador de registro de log que roda arquivos de registro com base no tamanho ou no tempo.
-    """
-    
+    """Manipulador de log com rotação por tamanho ou por tempo."""
+
     def __init__(
         self,
         filename: str | Path,
@@ -49,8 +44,6 @@ class MultiRotatingFileHandler(logging.Handler):
         interval: int = 1,
         encoding: str = "utf-8",
     ) -> None:
-        """Inicializa o handler com rotação por tamanho ou por tempo."""
-        
         super().__init__()
         self.base_filename = os.path.abspath(str(filename))
         self.max_bytes = max_bytes
@@ -62,23 +55,18 @@ class MultiRotatingFileHandler(logging.Handler):
         self.rollover_at = self._compute_rollover_at()
 
     def _compute_rollover_at(self) -> float:
-        """Calcula o timestamp da próxima rolagem."""
-        
         if self.when == "midnight":
             now = datetime.now(tz=timezone.utc)
             next_midnight = datetime(now.year, now.month, now.day, tzinfo=timezone.utc) + timedelta(days=1)
             return next_midnight.timestamp()
-
         return time.time() + (self.interval * 60)
 
     @contextmanager
     def _open_stream(self) -> Iterator[TextIO]:
-        """Abre o arquivo de log em append e garante fechamento automático."""
         with open(self.base_filename, "a", encoding=self.encoding) as stream:
             yield stream
 
     def emit(self, record: logging.LogRecord) -> None:
-        """Escreve um registro de log no arquivo, efetuando rollover quando necessário."""
         try:
             formatter = self.formatter
             if formatter is None:
@@ -96,7 +84,6 @@ class MultiRotatingFileHandler(logging.Handler):
             self.handleError(record)
 
     def should_rollover(self, message: str) -> bool:
-        """Verifica se a rotação de arquivo deve ocorrer antes de gravar."""
         if time.time() >= self.rollover_at:
             return True
 
@@ -109,7 +96,6 @@ class MultiRotatingFileHandler(logging.Handler):
         return False
 
     def do_rollover(self) -> None:
-        """Roda o arquivo de log por tamanho ou tempo."""
         if self.max_bytes > 0 and os.path.exists(self.base_filename):
             self._rotate_by_size()
         else:
@@ -118,7 +104,6 @@ class MultiRotatingFileHandler(logging.Handler):
         self.rollover_at = self._compute_rollover_at()
 
     def _rotate_by_size(self) -> None:
-        """Rotaciona o arquivo atual e preserva backups por número."""
         for index in range(self.backup_count - 1, 0, -1):
             source = f"{self.base_filename}.{index}"
             destination = f"{self.base_filename}.{index + 1}"
@@ -139,7 +124,6 @@ class MultiRotatingFileHandler(logging.Handler):
             pass
 
     def _rotate_by_time(self) -> None:
-        """Rotaciona o arquivo atual usando sufixo de data UTC."""
         suffix = datetime.now(tz=timezone.utc).strftime("%Y%m%d")
         rotated_name = f"{self.base_filename}.{suffix}"
         if os.path.exists(self.base_filename):
@@ -151,7 +135,6 @@ class MultiRotatingFileHandler(logging.Handler):
             pass
 
     def close(self) -> None:
-        """Fecha recursos abertos do handler."""
         if self.stream is not None:
             self.stream.close()
             self.stream = None
@@ -159,14 +142,10 @@ class MultiRotatingFileHandler(logging.Handler):
 
 
 def _limpar_logs_antigos(log_dir: Path, keep_days: int = 7, include_level_logs: bool = True) -> None:
-    """Remove logs muito antigos no diretório de logs, executando limpeza semanal."""
     if not log_dir.exists():
         return
 
     now = datetime.now(tz=timezone.utc)
-    # Comentado para permitir testes: if now.weekday() != 6:
-    #     return
-
     patterns = ["app.log*"]
     if include_level_logs:
         patterns.extend(["app.*.log*"])
@@ -189,23 +168,12 @@ def configure_logging(
     interval: int | None = None,
     keep_days: int | None = None,
 ) -> logging.Logger:
-    """Configura o logger da aplicação com handlers para arquivo e console.
-
-    A saída de console é habilitada quando a variável de ambiente
-    APP_LOG_CONSOLE está definida como true, 1, yes ou on.
-    """
-    max_bytes = max_bytes if max_bytes is not None else int(
-        os.getenv("APP_LOG_MAX_BYTES", str(5 * 1024 * 1024))
-    )
-    backup_count = backup_count if backup_count is not None else int(
-        os.getenv("APP_LOG_BACKUP_COUNT", "3")
-    )
-    when = when if when is not None else os.getenv("APP_LOG_ROTATION_WHEN", "midnight")
-    interval = interval if interval is not None else int(
-        os.getenv("APP_LOG_ROTATION_INTERVAL", "1")
-    )
-    keep_days = keep_days if keep_days is not None else int(os.getenv("APP_LOG_KEEP_DAYS", "7"))
-    console_enabled = os.getenv("APP_LOG_CONSOLE", "false").strip().lower() in ("1", "true", "yes", "on")
+    max_bytes = max_bytes if max_bytes is not None else settings.app_log_max_bytes
+    backup_count = backup_count if backup_count is not None else settings.app_log_backup_count
+    when = when if when is not None else settings.app_log_rotation_when
+    interval = interval if interval is not None else settings.app_log_rotation_interval
+    keep_days = keep_days if keep_days is not None else settings.app_log_keep_days
+    console_enabled = settings.app_log_console
 
     log_path = Path(log_file) if log_file else Path(__file__).resolve().parent / "app.log"
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -218,7 +186,7 @@ def configure_logging(
         logger.removeHandler(handler)
         handler.close()
 
-    logger.setLevel(getattr(logging, os.getenv("APP_LOG_LEVEL", "INFO").upper(), logging.INFO))
+    logger.setLevel(getattr(logging, settings.app_log_level.upper(), logging.INFO))
     logger.propagate = False
 
     formatter = JsonFormatter()
@@ -252,7 +220,7 @@ def configure_logging(
     if console_enabled:
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
-        console_handler.setLevel(getattr(logging, os.getenv("APP_LOG_LEVEL", "INFO").upper(), logging.INFO))
+        console_handler.setLevel(getattr(logging, settings.app_log_level.upper(), logging.INFO))
         logger.addHandler(console_handler)
 
     _limpar_logs_antigos(log_path.parent, keep_days=3, include_level_logs=True)
@@ -261,3 +229,11 @@ def configure_logging(
 
 
 logger = configure_logging()
+
+__all__ = [
+    "JsonFormatter",
+    "MultiRotatingFileHandler",
+    "_limpar_logs_antigos",
+    "configure_logging",
+    "logger",
+]
