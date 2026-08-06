@@ -1,0 +1,6 @@
+pydantic
+openpyxl
+fastapi
+uvicorn
+pandas
+numpy
