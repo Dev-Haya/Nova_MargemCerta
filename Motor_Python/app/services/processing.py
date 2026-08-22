@@ -1,15 +1,16 @@
 import io
+import re
 
 import numpy as np
 import pandas as pd
 
-from app.schemas import (
+from engine import logging_config
+from engine.app.schemas import (
     ItemProcessado,
     RequestProcessamento,
     ResponseProcessamento,
     ResumoProcessamento,
 )
-import logging_config
 
 logger = logging_config.logger
 
@@ -77,29 +78,52 @@ def ler_arquivo_planilha(conteudo_bytes: bytes, nome_arquivo: str) -> list[dict]
     df = df.replace(r"^\s*$", np.nan, regex=True)
     df = df.loc[:, ~df.isna().all(axis=0)].copy()
     df = df.loc[:, ~df.columns.isna()].copy()
-    df.columns = [str(col).strip().lower() for col in df.columns]
+
+    df = df.dropna(how="all")
+
+    def _normalizar_nome_coluna(col: object) -> str:
+        texto = str(col or "").strip().lower()
+        texto = re.sub(r"[^a-z0-9]+", "_", texto).strip("_")
+        return texto
 
     aliases = {
-        "preço_custo": "preco_custo",
-        "preco custo": "preco_custo",
+        "preco_custo": "preco_custo",
         "preco": "preco_custo",
+        "preco_": "preco_custo",
+        "preco": "preco_custo",
+        "pre_o": "preco_custo",
+        "preco_custo": "preco_custo",
+        "preco_de_custo": "preco_custo",
+        "preco_custo_": "preco_custo",
         "valor": "preco_custo",
+        "valor_custo": "preco_custo",
         "descricao": "descricao",
         "codigo": "codigo",
         "marca": "marca",
         "categoria": "categoria",
+        "fornecedores": "fornecedor",
+        "fornecedor": "fornecedor",
     }
+
     normalized_columns = []
     for col in df.columns:
-        normalized_columns.append(aliases.get(col, col))
+        nome_normalizado = _normalizar_nome_coluna(col)
+        normalized_columns.append(aliases.get(nome_normalizado, nome_normalizado))
     df.columns = normalized_columns
+
+    colunas_processamento = {"codigo", "descricao", "preco_custo", "marca", "categoria", "fornecedor"}
+    colunas_extra = [col for col in df.columns if col not in colunas_processamento]
+    if colunas_extra:
+        logger.info("Colunas extras ignoradas na planilha: %s", ", ".join(colunas_extra))
+        df = df.drop(columns=colunas_extra)
 
     colunas_padrao = {
         "codigo": "",
-        "descricao": "Sem descrição",
+        "descricao": "",
         "preco_custo": 0.0,
         "marca": "Sem Marca",
         "categoria": "Geral",
+        "fornecedor": "",
     }
     for col, val_default in colunas_padrao.items():
         if col not in df.columns:
@@ -108,26 +132,51 @@ def ler_arquivo_planilha(conteudo_bytes: bytes, nome_arquivo: str) -> list[dict]
     df["codigo"] = df["codigo"].astype(str).str.replace(r"\.0$", "", regex=True).str.strip()
     df["codigo"] = df["codigo"].replace(["nan", "None", "<NA>", "nan.0", ""], "")
 
+    if "fornecedor" in df.columns:
+        df["fornecedor"] = df["fornecedor"].astype(str).str.strip()
+        df["fornecedor"] = df["fornecedor"].replace(["nan", "None", "<NA>", "nan.0", ""], "")
+
     if "preco_custo" in df.columns:
-        df["preco_custo"] = (
-            df["preco_custo"]
-            .astype(str)
-            .str.replace("R$", "", regex=False)
-            .str.replace(" ", "", regex=False)
-            .str.replace(".", "", regex=False)
-            .str.replace(",", ".", regex=False)
-        )
+        def _normalizar_preco(valor: object) -> str:
+            texto = str(valor or "").strip()
+            if not texto:
+                return "0"
+
+            texto = texto.replace("R$", "").replace(" ", "")
+
+            if "," in texto and "." in texto:
+                if texto.rfind(",") > texto.rfind("."):
+                    texto = texto.replace(".", "").replace(",", ".")
+                else:
+                    texto = texto.replace(",", "")
+            elif "," in texto:
+                texto = texto.replace(",", ".")
+            elif "." in texto and texto.count(".") > 1:
+                texto = texto.replace(".", "")
+
+            return texto
+
+        df["preco_custo"] = df["preco_custo"].map(_normalizar_preco)
         df["preco_custo"] = pd.to_numeric(df["preco_custo"], errors="coerce").fillna(0.0)
 
     df = df.fillna(colunas_padrao)
     df = df.replace({np.nan: None})
 
-    for col in df.select_dtypes(include=["object"]).columns:
+    for col in df.select_dtypes(include=["object", "string"]).columns:
         df[col] = df[col].astype(str).str.lstrip("=+@-")
 
     dados = df.to_dict(orient="records")
-    logger.debug("Leitura da planilha %s concluída com %s linhas", nome_arquivo, len(dados))
-    return dados
+
+    dados_filtrados = []
+    for item in dados:
+        descricao = str(item.get("descricao") or "").strip()
+        if not descricao:
+            logger.warning("Registro ignorado por falta de descrição: %s", item)
+            continue
+        dados_filtrados.append(item)
+
+    logger.debug("Leitura da planilha %s concluída com %s linhas", nome_arquivo, len(dados_filtrados))
+    return dados_filtrados
 
 
 def processar_dados_planilha(payload: RequestProcessamento) -> ResponseProcessamento:
@@ -139,6 +188,17 @@ def processar_dados_planilha(payload: RequestProcessamento) -> ResponseProcessam
             return ResponseProcessamento(
                 sucesso=False,
                 mensagem="A planilha enviada está vazia.",
+                resumo=ResumoProcessamento(total_itens=0, itens_em_quarentena=0, alteracoes_de_preco=0),
+                itens=[],
+            )
+
+        if "descricao" in df_fornecedor.columns:
+            df_fornecedor = df_fornecedor[df_fornecedor["descricao"].astype(str).str.strip() != ""].copy()
+
+        if df_fornecedor.empty:
+            return ResponseProcessamento(
+                sucesso=False,
+                mensagem="Nenhum produto válido foi encontrado. Cada produto precisa ter uma descrição.",
                 resumo=ResumoProcessamento(total_itens=0, itens_em_quarentena=0, alteracoes_de_preco=0),
                 itens=[],
             )
