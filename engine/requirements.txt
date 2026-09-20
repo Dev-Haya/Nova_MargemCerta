@@ -1,0 +1,12 @@
+# Runtime
+pydantic
+openpyxl
+fastapi
+uvicorn
+python-multipart
+pandas
+numpy
+
+# Tests / development
+pytest
+httpx

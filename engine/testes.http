@@ -1,0 +1,37 @@
+### Teste 1: Tentativa sem token (Deve falhar)
+POST http://127.0.0.1:8000/process-prices
+Content-Type: application/json
+
+{
+    "produto": "Mouse"
+}
+
+###
+
+### Teste 2: Envio correto com o Token
+POST http://127.0.0.1:8000/process-prices
+Content-Type: application/json
+X-App-Token: teste
+
+{
+  "planilha_fornecedor": [
+    {
+      "codigo": "1001",
+      "descricao": "Mouse Gamer",
+      "preco_custo": 100.00,
+      "marca": "Marca A",
+      "categoria": "Periféricos"
+    }
+  ],
+  "dados_atuais": [
+    {
+      "codigo": "1001",
+      "preco_venda_atual": 100.00,
+      "estoque": 10
+    }
+  ],
+  "regras": {
+    "margem_padrao": 0.30,
+    "aumento_maximo_percentual": 0.15
+  }
+}

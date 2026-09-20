@@ -1,0 +1,97 @@
+{
+  "projeto": {
+    "nome": "Sistema de Atualização Inteligente de Preços",
+    "descricao": "Arquitetura funcional do sistema.",
+    "modulos": {
+      "interface_visual": {
+        "tecnologia": "C# WinForms",
+        "funcionalidades": [
+          {
+            "nome": "Design Direto ao Ponto",
+            "descricao": "Interface limpa utilizando Windows Forms."
+          },
+          {
+            "nome": "Mapeador de Cabeçalhos",
+            "descricao": "Permite selecionar as colunas de Código e Preço."
+          },
+          {
+            "nome": "DataGrid de Conferência",
+            "descricao": "Compara preços antigos e novos, destacando itens em quarentena."
+          }
+        ]
+      },
+      "banco_de_dados": {
+        "tecnologia": "SQLite",
+        "funcionalidades": [
+          {
+            "nome": "Base Isolada",
+            "descricao": "Banco local 100% offline."
+          },
+          {
+            "nome": "Importação Inicial",
+            "descricao": "Importa o estoque na primeira execução."
+          },
+          {
+            "nome": "Atualização Segura",
+            "descricao": "Atualiza os dados apenas após confirmação do usuário."
+          }
+        ]
+      },
+      "integracao": {
+        "funcionalidades": [
+          {
+            "nome": "Comunicação Assíncrona",
+            "tecnologia": "HttpClient",
+            "descricao": "Integração entre C# e API Python."
+          },
+          {
+            "nome": "Orquestração do Processo",
+            "descricao": "Inicializa e encerra automaticamente o executável Python."
+          },
+          {
+            "nome": "Validação de Licença",
+            "tecnologia": "Firebase",
+            "descricao": "Verifica a assinatura do cliente."
+          }
+        ]
+      },
+      "motor_python": {
+        "tecnologia": "Python",
+        "submodulos": {
+          "extracao_de_dados": {
+            "tecnologia": "Pandas",
+            "funcionalidades": [
+              "Leitura de arquivos .xlsx",
+              "Leitura de arquivos .csv",
+              "Tratamento de espaços",
+              "Conversão de moeda brasileira",
+              "Remoção de linhas vazias"
+            ]
+          },
+          "calculo_regras": {
+            "funcionalidades": [
+              "Cruzamento inteligente de produtos",
+              "Markup dinâmico",
+              "Quarentena de preços anormais"
+            ]
+          },
+          "api_local": {
+            "tecnologia": "FastAPI",
+            "funcionalidades": [
+              "Receber planilhas",
+              "Retornar JSON processado"
+            ]
+          },
+          "validacao": {
+            "tecnologia": "Pydantic",
+            "descricao": "Validação dos dados recebidos."
+          },
+          "deploy": {
+            "tecnologia": "PyInstaller",
+            "descricao": "Geração de executável independente."
+          }
+        }
+      }
+    }
+  }
+}

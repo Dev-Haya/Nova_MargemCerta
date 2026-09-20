@@ -1,0 +1,292 @@
+{"timestamp": "2026-09-16 21:29:58 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:30:41 UTC", "level": "WARNING", "message": "Tentativa de acesso não autorizado para / com token <ausente>", "logger": "motor_precificacao", "request_path": "/", "request_method": "GET", "request_id": "req-1229613546000", "user_id": "anonymous"}
+{"timestamp": "2026-09-16 21:30:41 UTC", "level": "WARNING", "message": "Resposta de autenticação para GET /", "logger": "motor_precificacao", "request_path": "/", "request_method": "GET", "request_id": "req-1229613546000", "user_id": "anonymous", "client_ip": "127.0.0.1", "status_code": 401}
+{"timestamp": "2026-09-16 21:37:05 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:37:36 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:45:19 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:55:00 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:55:17 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:56:22 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:57:01 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 21:58:53 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 22:00:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 1 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 22:08:25 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 22:08:36 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-16 22:08:38 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:41:23 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:41:40 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:43:23 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:46:46 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:49:02 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:49:29 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:49:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-17 21:49:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:37 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:43 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:45 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:49 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:49 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:52 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:52 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:30:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:00 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:01 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:03 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:03 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:03 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:07 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:07 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:07 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:07 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:07 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:08 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:08 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:08 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:08 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:08 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:10 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:10 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:10 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:10 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:31:10 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:35:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:35:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:35:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:28 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:31 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:33 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:33 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:33 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:33 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:33 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:34 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:37:34 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:38:28 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:43:15 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:43:19 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:43:26 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:43:28 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:45:16 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:45:38 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:45:40 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:46:31 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:48:58 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:55:26 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 05:59:19 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:09:09 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:09:18 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:17:24 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:19:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:20:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:20:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:20:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:20:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:00 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:03 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:21:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:01 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:01 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:02 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:05 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:22:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:23:00 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:23:00 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:23:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:23:36 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:23:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:24:38 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:25:21 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:25:27 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:25:45 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:25:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:27:29 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:27:43 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:27:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:27:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:28:19 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-18 06:28:38 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:08:07 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:10:11 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:16:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:16:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:17:00 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:17:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:17:20 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:19:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:21:29 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:24:35 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:26:47 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:30:03 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:31:24 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:36:28 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:37:37 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:38:35 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:39:06 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:41:48 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:43:16 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:44:02 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:45:17 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:46:23 UTC", "level": "INFO", "message": "API encerrada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:46:41 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:46:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:48:06 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:48:56 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:49:17 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:51:35 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:52:20 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:52:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:53:14 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:53:24 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:53:40 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:57:35 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:58:00 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 04:58:25 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:02:25 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:03:04 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:03:40 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:03:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:11:06 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:11:39 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:14:46 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:15:28 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:16:37 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:16:44 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:16:48 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:16:49 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:18:45 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:19:15 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:19:37 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:19:38 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:22:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:31:28 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:31:54 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:32:56 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:35:42 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:38:57 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:39:09 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:39:29 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:39:36 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:40:23 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:40:31 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:40:41 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:46:06 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:47:08 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:47:22 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:47:58 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:48:48 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:48:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:48:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:50:17 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:51:45 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:54:17 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 05:54:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:03:21 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:03:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:03:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:04:17 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:08:50 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:08:59 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:14:13 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:14:17 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:15:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:15:46 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 6 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:29:40 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:29:56 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:30:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:30:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:31:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:50:50 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:50:51 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:50:57 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:51:12 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:55:16 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:55:40 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 18:56:16 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:03:24 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:05:57 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:06:54 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:10:25 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:10:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:23:44 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:24:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:24:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:24:53 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:25:56 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:29:13 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:33:28 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 19:51:30 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:32:21 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:32:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 8 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:32:35 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 8 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:33:14 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 8 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:33:38 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:36:42 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:39:22 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:42:18 UTC", "level": "INFO", "message": "API iniciada com sucesso", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:47:32 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:49:47 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:51:50 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 21:51:50 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 22:21:37 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
+{"timestamp": "2026-09-19 22:23:55 UTC", "level": "INFO", "message": "Iniciando processamento de planilha para 7 itens do fornecedor", "logger": "motor_precificacao"}
