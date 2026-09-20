@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>EstoqueApp</RootNamespace>
+    <AssemblyName>EstoqueApp</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SQLite (100% gerenciado, sem dependências nativas extras) -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.8" />
+
+    <!-- Leitura de planilhas .xlsx (também abre .csv manualmente, sem dependência) -->
+    <PackageReference Include="ClosedXML" Version="0.104.1" />
+  </ItemGroup>
+
+</Project>
