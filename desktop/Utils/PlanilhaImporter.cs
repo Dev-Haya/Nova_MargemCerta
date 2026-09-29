@@ -13,7 +13,8 @@ namespace EstoqueApp.Utils
         public string ColunaPrecoUnitario { get; set; } = string.Empty;
         // Mantido para ler layouts salvos antes da nomeação explícita do preço unitário.
         public string ColunaPreco { get; set; } = string.Empty;
-        public string ColunaQuantidade { get; set; } = string.Empty;
+        public string? ColunaQuantidade { get; set; }
+        public string? ColunaUnidadesEmbalagem { get; set; }
         public string? ColunaMarca { get; set; }
         public string? ColunaCategoria { get; set; }
         public string? ColunaFornecedor { get; set; }
@@ -77,31 +78,39 @@ namespace EstoqueApp.Utils
             int idxCodigo = cabecalhos.IndexOf(mapa.ColunaCodigo);
             int idxDescricao = cabecalhos.IndexOf(mapa.ColunaDescricao);
             int idxPreco = cabecalhos.IndexOf(ObterColunaPreco(mapa));
-            int idxQtd = cabecalhos.IndexOf(mapa.ColunaQuantidade);
+            int idxQtd = ObterIndiceOpcional(cabecalhos, mapa.ColunaQuantidade);
+            int idxUnidade = ObterIndiceOpcional(cabecalhos, mapa.ColunaUnidadesEmbalagem);
             int idxMarca = mapa.ColunaMarca is null ? -1 : cabecalhos.IndexOf(mapa.ColunaMarca);
             int idxCategoria = mapa.ColunaCategoria is null ? -1 : cabecalhos.IndexOf(mapa.ColunaCategoria);
             int idxFornecedor = mapa.ColunaFornecedor is null ? -1 : cabecalhos.IndexOf(mapa.ColunaFornecedor);
-            ValidarIndicesObrigatorios(idxCodigo, idxDescricao, idxPreco, idxQtd);
+            ValidarIndicesObrigatorios(idxCodigo, idxDescricao, idxPreco);
 
             var itens = new List<ItemEstoque>();
             for (int i = 1; i < linhas.Length; i++)
             {
                 if (string.IsNullOrWhiteSpace(linhas[i])) continue;
                 var campos = LerLinhaCsv(linhas[i]);
-                if (Math.Max(idxCodigo, Math.Max(idxDescricao, Math.Max(idxPreco, idxQtd))) >= campos.Count)
+                if (Math.Max(idxCodigo, Math.Max(idxDescricao, idxPreco)) >= campos.Count)
                     continue;
 
                 var codigo = campos[idxCodigo].Trim();
                 var descricao = campos[idxDescricao].Trim();
                 if (string.IsNullOrWhiteSpace(codigo) || string.IsNullOrWhiteSpace(descricao) ||
-                    !TentarLerDecimal(campos[idxPreco], out var preco) ||
-                    !TentarLerInteiro(campos[idxQtd], out var quantidade))
+                    !TentarLerDecimal(campos[idxPreco], out var preco))
+                    continue;
+
+                var textoQuantidade = idxQtd >= 0 && idxQtd < campos.Count ? campos[idxQtd] : string.Empty;
+                var textoUnidade = idxUnidade >= 0 && idxUnidade < campos.Count ? campos[idxUnidade] : string.Empty;
+                if (idxQtd >= 0 && string.IsNullOrWhiteSpace(textoQuantidade))
+                    continue;
+                if (!TentarLerQuantidade(textoQuantidade, out var quantidade))
                     continue;
 
                 itens.Add(new ItemEstoque
                 {
                     Codigo = codigo,
                     Descricao = descricao,
+                    Unidade = textoUnidade,
                     PrecoCusto = preco,
                     Quantidade = quantidade,
                     Marca = idxMarca >= 0 && idxMarca < campos.Count ? campos[idxMarca].Trim() : "Sem Marca"
@@ -121,11 +130,12 @@ namespace EstoqueApp.Utils
             int colCodigo = cabecalhos.IndexOf(mapa.ColunaCodigo) + 1;
             int colDescricao = cabecalhos.IndexOf(mapa.ColunaDescricao) + 1;
             int colPreco = cabecalhos.IndexOf(ObterColunaPreco(mapa)) + 1;
-            int colQtd = cabecalhos.IndexOf(mapa.ColunaQuantidade) + 1;
+            int colQtd = ObterIndiceOpcional(cabecalhos, mapa.ColunaQuantidade) + 1;
+            int colUnidade = ObterIndiceOpcional(cabecalhos, mapa.ColunaUnidadesEmbalagem) + 1;
             int colMarca = mapa.ColunaMarca is null ? 0 : cabecalhos.IndexOf(mapa.ColunaMarca) + 1;
             int colCategoria = mapa.ColunaCategoria is null ? 0 : cabecalhos.IndexOf(mapa.ColunaCategoria) + 1;
             int colFornecedor = mapa.ColunaFornecedor is null ? 0 : cabecalhos.IndexOf(mapa.ColunaFornecedor) + 1;
-            ValidarIndicesObrigatorios(colCodigo, colDescricao, colPreco, colQtd);
+            ValidarIndicesObrigatorios(colCodigo, colDescricao, colPreco);
 
             var itens = new List<ItemEstoque>();
             var ultimaLinha = planilha.LastRowUsed()!.RowNumber();
@@ -136,14 +146,21 @@ namespace EstoqueApp.Utils
                 if (string.IsNullOrWhiteSpace(codigo)) continue;
                 var descricao = planilha.Cell(linha, colDescricao).GetString().Trim();
                 if (string.IsNullOrWhiteSpace(descricao) ||
-                    !TentarLerDecimalExcel(planilha.Cell(linha, colPreco), out var preco) ||
-                    !TentarLerInteiroExcel(planilha.Cell(linha, colQtd), out var quantidade))
+                    !TentarLerDecimalExcel(planilha.Cell(linha, colPreco), out var preco))
+                    continue;
+
+                var textoQuantidade = colQtd > 0 ? planilha.Cell(linha, colQtd).GetString() : string.Empty;
+                var textoUnidade = colUnidade > 0 ? planilha.Cell(linha, colUnidade).GetString() : string.Empty;
+                if (colQtd > 0 && string.IsNullOrWhiteSpace(textoQuantidade))
+                    continue;
+                if (!TentarLerQuantidade(textoQuantidade, out var quantidade))
                     continue;
 
                 itens.Add(new ItemEstoque
                 {
                     Codigo = codigo,
                     Descricao = descricao,
+                    Unidade = textoUnidade,
                     PrecoCusto = preco,
                     Quantidade = quantidade,
                     Marca = colMarca > 0 ? planilha.Cell(linha, colMarca).GetString().Trim() : "Sem Marca"
@@ -157,10 +174,33 @@ namespace EstoqueApp.Utils
         private static string ObterColunaPreco(MapeamentoColunas mapa) =>
             string.IsNullOrWhiteSpace(mapa.ColunaPrecoUnitario) ? mapa.ColunaPreco : mapa.ColunaPrecoUnitario;
 
-        private static void ValidarIndicesObrigatorios(int codigo, int descricao, int preco, int quantidade)
+        private static bool TentarLerQuantidade(string textoQuantidade, out int quantidade)
         {
-            if (codigo < 0 || descricao < 0 || preco < 0 || quantidade < 0)
-                throw new InvalidDataException("O mapeamento precisa conter Código, Descrição, Preço unitário e Quantidade.");
+            quantidade = 1;
+
+            var texto = textoQuantidade?.Trim() ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(texto))
+                return true;
+
+            if (!TentarLerInteiro(texto, out var valorQuantidade) || valorQuantidade < 0)
+                return false;
+
+            quantidade = valorQuantidade;
+            return true;
+        }
+
+        private static int ObterIndiceOpcional(IReadOnlyList<string> cabecalhos, string? coluna)
+        {
+            if (string.IsNullOrWhiteSpace(coluna)) return -1;
+            for (var indice = 0; indice < cabecalhos.Count; indice++)
+                if (cabecalhos[indice] == coluna) return indice;
+            return -1;
+        }
+
+        private static void ValidarIndicesObrigatorios(int codigo, int descricao, int preco)
+        {
+            if (codigo < 0 || descricao < 0 || preco < 0)
+                throw new InvalidDataException("O mapeamento precisa conter Código, Descrição e Preço unitário.");
         }
 
         private static List<string> LerLinhaCsv(string linha)
