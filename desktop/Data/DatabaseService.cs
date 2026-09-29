@@ -38,6 +38,7 @@ namespace EstoqueApp.Data
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     Codigo TEXT NOT NULL UNIQUE,
                     Descricao TEXT NOT NULL,
+                    Unidade TEXT NOT NULL DEFAULT '',
                     Marca TEXT NOT NULL DEFAULT 'Sem Marca',
                     Categoria TEXT NOT NULL DEFAULT 'Geral',
                     Fornecedor TEXT NOT NULL DEFAULT '',
@@ -57,6 +58,7 @@ namespace EstoqueApp.Data
             AdicionarColuna(conn, "Marca TEXT NOT NULL DEFAULT 'Sem Marca'");
             AdicionarColuna(conn, "Categoria TEXT NOT NULL DEFAULT 'Geral'");
             AdicionarColuna(conn, "Fornecedor TEXT NOT NULL DEFAULT ''");
+            AdicionarColuna(conn, "Unidade TEXT NOT NULL DEFAULT ''");
 
             if (adicionouCusto || adicionouVendaAtual || adicionouVendaSugerida)
             {
@@ -112,7 +114,7 @@ namespace EstoqueApp.Data
             conn.Open();
 
             var cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT Id, Codigo, Descricao, Marca, Categoria, Fornecedor, PrecoCusto, PrecoVendaAtual, PrecoVendaSugerido, Quantidade FROM Itens";
+            cmd.CommandText = "SELECT Id, Codigo, Descricao, Unidade, Marca, Categoria, Fornecedor, PrecoCusto, PrecoVendaAtual, PrecoVendaSugerido, Quantidade FROM Itens";
 
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -122,13 +124,14 @@ namespace EstoqueApp.Data
                     Id = reader.GetInt32(0),
                     Codigo = reader.GetString(1),
                     Descricao = reader.GetString(2),
-                    Marca = reader.GetString(3),
-                    Categoria = reader.GetString(4),
-                    Fornecedor = reader.GetString(5),
-                    PrecoCusto = (decimal)reader.GetDouble(6),
-                    PrecoVendaAtual = (decimal)reader.GetDouble(7),
-                    PrecoVendaSugerido = (decimal)reader.GetDouble(8),
-                    Quantidade = reader.GetInt32(9)
+                    Unidade = reader.GetString(3),
+                    Marca = reader.GetString(4),
+                    Categoria = reader.GetString(5),
+                    Fornecedor = reader.GetString(6),
+                    PrecoCusto = (decimal)reader.GetDouble(7),
+                    PrecoVendaAtual = (decimal)reader.GetDouble(8),
+                    PrecoVendaSugerido = (decimal)reader.GetDouble(9),
+                    Quantidade = reader.GetInt32(10)
                 });
             }
             return lista;
@@ -149,11 +152,12 @@ namespace EstoqueApp.Data
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = """
-                    INSERT INTO Itens (Codigo, Descricao, Marca, Categoria, Fornecedor, PrecoCusto, PrecoVendaAtual, PrecoVendaSugerido, PrecoAntigo, PrecoNovo, Quantidade)
-                    VALUES ($codigo, $descricao, $marca, $categoria, $fornecedor, $precoCusto, 0, 0, 0, $precoCusto, $quantidade)
+                    INSERT INTO Itens (Codigo, Descricao, Unidade, Marca, Categoria, Fornecedor, PrecoCusto, PrecoVendaAtual, PrecoVendaSugerido, PrecoAntigo, PrecoNovo, Quantidade)
+                    VALUES ($codigo, $descricao, $unidade, $marca, $categoria, $fornecedor, $precoCusto, 0, 0, 0, $precoCusto, $quantidade)
                     ON CONFLICT(Codigo) DO UPDATE SET
                         PrecoCusto = $precoCusto,
                         Descricao = $descricao,
+                        Unidade = $unidade,
                         Marca = $marca,
                         Categoria = $categoria,
                         Fornecedor = $fornecedor,
@@ -161,6 +165,7 @@ namespace EstoqueApp.Data
                     """;
                 cmd.Parameters.AddWithValue("$codigo", item.Codigo);
                 cmd.Parameters.AddWithValue("$descricao", item.Descricao);
+                cmd.Parameters.AddWithValue("$unidade", item.Unidade);
                 cmd.Parameters.AddWithValue("$marca", item.Marca);
                 cmd.Parameters.AddWithValue("$categoria", item.Categoria);
                 cmd.Parameters.AddWithValue("$fornecedor", item.Fornecedor);
