@@ -10,6 +10,7 @@ namespace EstoqueApp.Models
         public int Id { get; set; }
         public string Codigo { get; set; } = string.Empty;
         public string Descricao { get; set; } = string.Empty;
+        public string Unidade { get; set; } = string.Empty;
         public string Marca { get; set; } = "Sem Marca";
         public string Categoria { get; set; } = "Geral";
         public string Fornecedor { get; set; } = string.Empty;
