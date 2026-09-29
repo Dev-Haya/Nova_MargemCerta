@@ -123,4 +123,88 @@ public sealed class UiFlowTests
             File.Delete(arquivo);
         }
     }
+
+    [Fact]
+    public void ImportadorUsaQuantidadePadraoQuandoMapeamentoForOpcional()
+    {
+        var arquivo = Path.Combine(Path.GetTempPath(), $"planilha-{Guid.NewGuid():N}.csv");
+        try
+        {
+            File.WriteAllText(arquivo, "codigo;descricao;preco\nA;Produto;R$ 10,00");
+            var mapa = new MapeamentoColunas
+            {
+                ColunaCodigo = "codigo",
+                ColunaDescricao = "descricao",
+                ColunaPreco = "preco"
+            };
+
+            var item = Assert.Single(PlanilhaImporter.Importar(arquivo, mapa));
+
+            Assert.Equal(1, item.Quantidade);
+            Assert.Equal(10m, item.PrecoCusto);
+        }
+        finally
+        {
+            File.Delete(arquivo);
+        }
+    }
+
+    [Fact]
+    public void ImportadorPreservaQuantidadePrecoEUnidadeDaPlanilha()
+    {
+        var arquivo = Path.Combine(Path.GetTempPath(), $"planilha-{Guid.NewGuid():N}.csv");
+        try
+        {
+            File.WriteAllText(arquivo, "codigo;descricao;preco;quantidade;unidade\nA;Produto;R$ 120,00;12;caixa");
+            var mapa = new MapeamentoColunas
+            {
+                ColunaCodigo = "codigo",
+                ColunaDescricao = "descricao",
+                ColunaPreco = "preco",
+                ColunaQuantidade = "quantidade",
+                ColunaUnidadesEmbalagem = "unidade"
+            };
+
+            var item = Assert.Single(PlanilhaImporter.Importar(arquivo, mapa));
+
+            Assert.Equal(12, item.Quantidade);
+            Assert.Equal("caixa", item.Unidade);
+            Assert.Equal(120m, item.PrecoCusto);
+        }
+        finally
+        {
+            File.Delete(arquivo);
+        }
+    }
+
+    [Theory]
+    [InlineData("pack")]
+    [InlineData("pacote")]
+    [InlineData("caixa")]
+    public void ImportadorPreservaTipoDeUnidade(string unidade)
+    {
+        var arquivo = Path.Combine(Path.GetTempPath(), $"planilha-{Guid.NewGuid():N}.csv");
+        try
+        {
+            File.WriteAllText(arquivo, $"codigo;descricao;preco;quantidade;unidade\nA;Produto;60;6;{unidade}");
+            var mapa = new MapeamentoColunas
+            {
+                ColunaCodigo = "codigo",
+                ColunaDescricao = "descricao",
+                ColunaPreco = "preco",
+                ColunaQuantidade = "quantidade",
+                ColunaUnidadesEmbalagem = "unidade"
+            };
+
+            var item = Assert.Single(PlanilhaImporter.Importar(arquivo, mapa));
+
+            Assert.Equal(6, item.Quantidade);
+            Assert.Equal(unidade, item.Unidade);
+            Assert.Equal(60m, item.PrecoCusto);
+        }
+        finally
+        {
+            File.Delete(arquivo);
+        }
+    }
 }
