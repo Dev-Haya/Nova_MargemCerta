@@ -99,8 +99,10 @@ namespace EstoqueApp.Forms
 
             _grid.Columns.Add(new DataGridViewCheckBoxColumn { Name = "Aprovado", HeaderText = "Aprovar?", DataPropertyName = "Aprovado", Width = 70 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Codigo", HeaderText = "Código", DataPropertyName = "Codigo", Width = 100 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Descricao", HeaderText = "Descrição", DataPropertyName = "Descricao", Width = 260, AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill, MinimumWidth = 180, DefaultCellStyle = new DataGridViewCellStyle { WrapMode = DataGridViewTriState.True } });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Descricao", HeaderText = "Produto", DataPropertyName = "Descricao", Width = 260, AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill, MinimumWidth = 180, DefaultCellStyle = new DataGridViewCellStyle { WrapMode = DataGridViewTriState.True } });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Unidade", HeaderText = "Unidade", DataPropertyName = "Unidade", Width = 100 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Marca", HeaderText = "Marca", DataPropertyName = "Marca", Width = 120 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Categoria", HeaderText = "Categoria", DataPropertyName = "Categoria", Width = 130 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Fornecedor", HeaderText = "Fornecedor", DataPropertyName = "Fornecedor", Width = 140 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PrecoCusto", HeaderText = "Custo", DataPropertyName = "PrecoCusto", Width = 100, DefaultCellStyle = EstiloMonetario() });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "ValorAcumuladoCusto", HeaderText = "Valor acumulado (custo)", DataPropertyName = "ValorAcumuladoCusto", Width = 150, ReadOnly = true, DefaultCellStyle = EstiloMonetario() });
@@ -693,7 +695,7 @@ namespace EstoqueApp.Forms
 
         private void ConfigurarRegras()
         {
-            using var dialogo = new BusinessRulesForm(_regras);
+            using var dialogo = new BusinessRulesForm(_regras, _itensAtuais);
             if (dialogo.ShowDialog(this) == DialogResult.OK && dialogo.Resultado is not null)
             {
                 _regras = dialogo.Resultado;
